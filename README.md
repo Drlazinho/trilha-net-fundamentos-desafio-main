@@ -1,38 +1,39 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# Sistema de Gerenciamento de Estacionamento
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+## Descrição
+Este projeto é um sistema simples de gerenciamento de estacionamento desenvolvido em C# como parte da Trilha .NET Fundamentos da DIO. O sistema permite gerenciar veículos estacionados, realizar operações como adicionar e remover veículos, além de listar os veículos presentes no estacionamento.
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+## Funcionalidades
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+- **Cadastrar Veículo**: Adiciona um novo veículo ao estacionamento através da placa.
+- **Remover Veículo**: Remove um veículo do estacionamento e calcula o valor a ser pago com base no tempo de permanência.
+- **Listar Veículos**: Exibe todos os veículos atualmente estacionados.
+- **Encerrar**: Finaliza a execução do programa.
 
-A classe contém três variáveis, sendo:
+## Estrutura do Projeto
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+### Classe Estacionamento
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
+#### Atributos
+- `precoInicial`: Valor decimal cobrado para estacionar o veículo.
+- `precoPorHora`: Valor decimal cobrado por hora de permanência.
+- `veiculos`: Lista de strings que armazena as placas dos veículos estacionados.
 
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+#### Métodos
+- `AdicionarVeiculo()`: Adiciona um veículo à lista de veículos estacionados.
+- `RemoverVeiculo()`: Remove um veículo da lista e calcula o valor a ser pago.
+- `ListarVeiculos()`: Lista todos os veículos estacionados.
 
-A classe contém três métodos, sendo:
+### Programa Principal
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+O arquivo `Program.cs` contém o menu interativo que permite ao usuário interagir com o sistema. Ao iniciar, o programa solicita o preço inicial e o preço por hora, que serão utilizados para calcular o valor a ser pago quando um veículo for removido.
 
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
+## Como Usar
 
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
-
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
-
-
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+1. Execute o programa.
+2. Informe o preço inicial e o preço por hora quando solicitado.
+3. Utilize o menu para realizar as operações desejadas:
+   - Opção 1: Cadastrar um veículo
+   - Opção 2: Remover um veículo
+   - Opção 3: Listar veículos estacionados
+   - Opção 4: Encerrar o programa
